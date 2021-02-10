@@ -95,7 +95,7 @@ Promises:
 void UserAppRun(void)
 {
     u32 i;
-    u8 u8_counter;
+    u8 u8_counter=0;
     while(1)
     {
       u8_counter+=1;
@@ -104,7 +104,7 @@ void UserAppRun(void)
         if(u8_counter<128)
         {
             PORTA=128+u8_counter;
-                 for(i=0;i<20000;i++){
+                 for(i=0;i<200000;i++){
                       }//0b1000 0000  (128) -> 0b0111 1111 (255)  
         }
         else
