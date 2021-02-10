@@ -94,14 +94,23 @@ Promises:
 */
 void UserAppRun(void)
 {
-   
+    u32 i;
+    u8 u8_counter;
     while(1)
     {
-        RA0=1;
-        __delay_ms(250);
-        RA0=0;
-        __delay_ms(250);
-        break;
+      u8_counter+=1;
+        i=0;
+        
+        if(u8_counter<128)
+        {
+            PORTA=128+u8_counter;
+                 for(i=0;i<20000;i++){
+                      }//0b1000 0000  (128) -> 0b0111 1111 (255)  
+        }
+        else
+        {
+            u8_counter=0;
+        }       
     }
            // set pin HIGH
    
