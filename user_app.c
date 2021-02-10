@@ -95,21 +95,23 @@ Promises:
 void UserAppRun(void)
 {
     u32 i;
-    u8 u8_counter=0;
+    u8 u8Counter=0;
     while(1)
     {
-      u8_counter+=1;
+      u8Counter+=1;
         i=0;
         
-        if(u8_counter<128)
+        if(u8Counter<128)
         {
-            PORTA=128+u8_counter; //counter of bits 0b1000 0000  (128) -> 0b0111 1111 (255)
-                 for(i=0;i<200000;i++){ //Delay loop of 250 ms
-                      }  
+            PORTA=128+u8Counter;  //counter of bits 0b1000 0000  (128) -> 0b0111 1111 (255)
+                 for(i=0;i<200000;i++)
+                 { 
+                     //Delay loop of 250 ms
+                 }  
         }
         else
         {
-            u8_counter=0;
+            u8Counter=0;
         }       
     }
   
