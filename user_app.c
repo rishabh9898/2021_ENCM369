@@ -103,18 +103,16 @@ void UserAppRun(void)
         
         if(u8_counter<128)
         {
-            PORTA=128+u8_counter;
-                 for(i=0;i<200000;i++){
-                      }//0b1000 0000  (128) -> 0b0111 1111 (255)  
+            PORTA=128+u8_counter; //counter of bits 0b1000 0000  (128) -> 0b0111 1111 (255)
+                 for(i=0;i<200000;i++){ //Delay loop of 250 ms
+                      }  
         }
         else
         {
             u8_counter=0;
         }       
     }
-           // set pin HIGH
-   
-    
+  
 } /* end UserAppRun */
 
 
