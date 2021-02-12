@@ -74,7 +74,6 @@ __Lrbss 0 0 COMRAM 1
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 end_of_initialization 1FF56 0 CODE 0
-UserAppRun@u8_counter 512 0 COMRAM 1
 __end_of_UserAppRun 1FFFC 0 CODE 0
 __Hibigdata 0 0 CODE 0
 __Libigdata 0 0 CODE 0
@@ -223,6 +222,7 @@ ___inthi_sp 0 0 STACK 2
 __size_of_ClockSetup 0 0 ABS 0
 ___intlo_sp 0 0 STACK 2
 __size_of_SystemSleep 0 0 ABS 0
+UserAppRun@u8Counter 512 0 COMRAM 1
 __smallconst 0 0 SMALLCONST 0
 __Hreset_vec 4 0 CODE 0
 __Lreset_vec 0 0 CODE 0
@@ -253,7 +253,7 @@ text6 1FF34 1FF35 CODE 1FF34 0
 %locals
 dist/default/debug\2021_ENCM369.debug.o
 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
-C:\Users\ruhel\AppData\Local\Temp\si1s.s
+C:\Users\ruhel\AppData\Local\Temp\siac.s
 5081 1FF4A 0 CODE 0
 5083 1FF4A 0 CODE 0
 5086 1FF4A 0 CODE 0
@@ -283,7 +283,7 @@ user_app.c
 104 1FFA6 0 CODE 0
 106 1FFB6 0 CODE 0
 107 1FFBC 0 CODE 0
-108 1FFCC 0 CODE 0
+110 1FFCC 0 CODE 0
 user_app.c
 76 1FF38 0 CODE 0
 80 1FF38 0 CODE 0

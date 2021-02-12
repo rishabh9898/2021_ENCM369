@@ -2623,8 +2623,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;encm369_pic18.c: 91:     PORTA=0x00;
 [e = _PORTA -> -> 0 `i `uc ]
 "92
-[; ;encm369_pic18.c: 92:     TRISA=0x38;
-[e = _TRISA -> -> 56 `i `uc ]
+[; ;encm369_pic18.c: 92:     TRISA=0x00;
+[e = _TRISA -> -> 0 `i `uc ]
 "93
 [; ;encm369_pic18.c: 93:     ANSELA=0x00;
 [e = _ANSELA -> -> 0 `i `uc ]

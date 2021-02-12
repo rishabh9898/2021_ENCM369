@@ -101,7 +101,7 @@ void UserAppRun(void)
       u8Counter+=1;
         i=0;
         
-        if(u8Counter<128)
+        if(u8Counter<64)
         {
             PORTA=128+u8Counter;  //counter of bits 0b1000 0000  (128) -> 0b0111 1111 (255)
                  for(i=0;i<200000;i++)

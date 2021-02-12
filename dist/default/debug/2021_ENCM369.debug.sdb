@@ -67,8 +67,8 @@
 "97
 [v UserAppRun@i i `ul  1 a 4 0 ]
 "98
-[v UserAppRun@u8_counter u8_counter `uc  1 a 1 4 ]
-"116
+[v UserAppRun@u8Counter u8Counter `uc  1 a 1 4 ]
+"118
 } 0
 "76
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]

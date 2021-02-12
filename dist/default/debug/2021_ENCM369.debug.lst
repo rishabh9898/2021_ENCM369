@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Wed Feb 10 20:06:00 2021
+                                                                                               Fri Feb 12 15:38:14 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	18F27Q43
@@ -118,7 +118,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    104                           
    105                           ; 4 bytes @ 0x0
    106  00050E                     	ds	4
-   107  000512                     UserAppRun@u8_counter:
+   107  000512                     UserAppRun@u8Counter:
    108                           	callstack 0
    109                           
    110                           ; 1 bytes @ 0x4
@@ -211,7 +211,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    187 ;;		None
    188 ;; Auto vars:     Size  Location     Type
    189 ;;  i               4    0[COMRAM] unsigned long 
-   190 ;;  u8_counter      1    4[COMRAM] unsigned char 
+   190 ;;  u8Counter       1    4[COMRAM] unsigned char 
    191 ;; Return value:  Size  Location     Type
    192 ;;                  1    wreg      void 
    193 ;; Registers used:
@@ -251,29 +251,29 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    217                           	callstack 127
    218  01FFA0                     l745:
    219                           
-   220                           ;user_app.c: 97:     u32 i;;user_app.c: 98:     u8 u8_counter=0;
+   220                           ;user_app.c: 97:     u32 i;;user_app.c: 98:     u8 u8Counter=0;
    221  01FFA0  0E00               	movlw	0
-   222  01FFA2  6E12               	movwf	UserAppRun@u8_counter^(0+1280),c
+   222  01FFA2  6E12               	movwf	UserAppRun@u8Counter^(0+1280),c
    223  01FFA4                     l747:
    224                           
-   225                           ;user_app.c: 100:     {;user_app.c: 101:       u8_counter+=1;
-   226  01FFA4  2A12               	incf	UserAppRun@u8_counter^(0+1280),f,c
+   225                           ;user_app.c: 100:     {;user_app.c: 101:       u8Counter+=1;
+   226  01FFA4  2A12               	incf	UserAppRun@u8Counter^(0+1280),f,c
    227  01FFA6                     
-   228                           ;user_app.c: 104:         if(u8_counter<128)
-   229  01FFA6  0E80               	movlw	128
-   230  01FFA8  6012               	cpfslt	UserAppRun@u8_counter^(0+1280),c
+   228                           ;user_app.c: 104:         if(u8Counter<64)
+   229  01FFA6  0E40               	movlw	64
+   230  01FFA8  6012               	cpfslt	UserAppRun@u8Counter^(0+1280),c
    231  01FFAA  EFD9  F0FF         	goto	u11
    232  01FFAE  EFDB  F0FF         	goto	u10
    233  01FFB2                     u11:
    234  01FFB2  EFD0  F0FF         	goto	l745
    235  01FFB6                     u10:
    236  01FFB6                     
-   237                           ;user_app.c: 105:         {;user_app.c: 106:             PORTA=128+u8_counter;
-   238  01FFB6  5012               	movf	UserAppRun@u8_counter^(0+1280),w,c
+   237                           ;user_app.c: 105:         {;user_app.c: 106:             PORTA=128+u8Counter;
+   238  01FFB6  5012               	movf	UserAppRun@u8Counter^(0+1280),w,c
    239  01FFB8  0F80               	addlw	128
    240  01FFBA  6ECE               	movwf	206,c	;volatile
    241  01FFBC                     
-   242                           ;user_app.c: 107:                  for(i=0;i<200000;i++){
+   242                           ;user_app.c: 107:                  for(i=0;i<200000;i++)
    243  01FFBC  0E00               	movlw	0
    244  01FFBE  6E0E               	movwf	UserAppRun@i^(0+1280),c
    245  01FFC0  0E00               	movlw	0
@@ -284,7 +284,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    250  01FFCA  6E11               	movwf	(UserAppRun@i+3)^(0+1280),c
    251  01FFCC                     l761:
    252                           
-   253                           ;user_app.c: 108:                       }
+   253                           ;user_app.c: 108:                  {;user_app.c: 110:                  }
    254  01FFCC  0E01               	movlw	1
    255  01FFCE  260E               	addwf	UserAppRun@i^(0+1280),f,c
    256  01FFD0  0E00               	movlw	0
@@ -1132,7 +1132,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Wed Feb 10 20:06:00 2021
+Symbol Table                                                                                   Fri Feb 12 15:38:14 2021
 
      __size_of_SysTickSetup 0022                          l13 FF34                          l22 FF36  
                         l16 FF48                          l19 FF7C                          l55 FF38  
@@ -1162,8 +1162,8 @@ Symbol Table                                                                    
        start_initialization FF4A               ?_SysTickSetup 050E                 _SystemSleep FF36  
                 ?_GpioSetup 050E                 __pbssCOMRAM 0501           _UserAppInitialize FF38  
               ??_UserAppRun 050E          ?_UserAppInitialize 050E              ??_SysTickSetup 050E  
-       ??_UserAppInitialize 050E        UserAppRun@u8_counter 0512          __end_of_UserAppRun FFFC  
- __end_of_UserAppInitialize FF3A                 ??_GpioSetup 050E                    __Hrparam 0000  
-                  __Lrparam 0000        __end_of_SysTickSetup FF7E  __size_of_UserAppInitialize 0002  
+       ??_UserAppInitialize 050E          __end_of_UserAppRun FFFC   __end_of_UserAppInitialize FF3A  
+               ??_GpioSetup 050E                    __Hrparam 0000                    __Lrparam 0000  
+       UserAppRun@u8Counter 0512        __end_of_SysTickSetup FF7E  __size_of_UserAppInitialize 0002  
              __size_of_main 0022                ?_SystemSleep 050E          _G_u32SystemTime1ms 0509  
          _G_u32SystemTime1s 0505  

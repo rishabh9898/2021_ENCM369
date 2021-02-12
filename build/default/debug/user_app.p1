@@ -2614,9 +2614,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user_app.c: 97:     u32 i;
 [v _i `ul ~T0 @X0 1 a ]
 "98
-[; ;user_app.c: 98:     u8 u8_counter=0;
-[v _u8_counter `uc ~T0 @X0 1 a ]
-[e = _u8_counter -> -> 0 `i `uc ]
+[; ;user_app.c: 98:     u8 u8Counter=0;
+[v _u8Counter `uc ~T0 @X0 1 a ]
+[e = _u8Counter -> -> 0 `i `uc ]
 "99
 [; ;user_app.c: 99:     while(1)
 [e :U 2275 ]
@@ -2624,59 +2624,61 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user_app.c: 100:     {
 {
 "101
-[; ;user_app.c: 101:       u8_counter+=1;
-[e =+ _u8_counter -> -> 1 `i `uc ]
+[; ;user_app.c: 101:       u8Counter+=1;
+[e =+ _u8Counter -> -> 1 `i `uc ]
 "102
 [; ;user_app.c: 102:         i=0;
 [e = _i -> -> -> 0 `i `l `ul ]
 "104
-[; ;user_app.c: 104:         if(u8_counter<128)
-[e $ ! < -> _u8_counter `i -> 128 `i 2277  ]
+[; ;user_app.c: 104:         if(u8Counter<64)
+[e $ ! < -> _u8Counter `i -> 64 `i 2277  ]
 "105
 [; ;user_app.c: 105:         {
 {
 "106
-[; ;user_app.c: 106:             PORTA=128+u8_counter;
-[e = _PORTA -> + -> 128 `i -> _u8_counter `i `uc ]
+[; ;user_app.c: 106:             PORTA=128+u8Counter;
+[e = _PORTA -> + -> 128 `i -> _u8Counter `i `uc ]
 "107
-[; ;user_app.c: 107:                  for(i=0;i<200000;i++){
+[; ;user_app.c: 107:                  for(i=0;i<200000;i++)
 {
 [e = _i -> -> -> 0 `i `l `ul ]
 [e $ < _i -> -> 200000 `l `ul 2278  ]
 [e $U 2279  ]
 [e :U 2278 ]
-{
 "108
-[; ;user_app.c: 108:                       }
+[; ;user_app.c: 108:                  {
+{
+"110
+[; ;user_app.c: 110:                  }
 }
 [e ++ _i -> -> -> 1 `i `l `ul ]
 [e $ < _i -> -> 200000 `l `ul 2278  ]
 [e :U 2279 ]
 }
-"109
-[; ;user_app.c: 109:         }
+"111
+[; ;user_app.c: 111:         }
 }
 [e $U 2281  ]
-"110
-[; ;user_app.c: 110:         else
-[e :U 2277 ]
-"111
-[; ;user_app.c: 111:         {
-{
 "112
-[; ;user_app.c: 112:             u8_counter=0;
-[e = _u8_counter -> -> 0 `i `uc ]
+[; ;user_app.c: 112:         else
+[e :U 2277 ]
 "113
-[; ;user_app.c: 113:         }
+[; ;user_app.c: 113:         {
+{
+"114
+[; ;user_app.c: 114:             u8Counter=0;
+[e = _u8Counter -> -> 0 `i `uc ]
+"115
+[; ;user_app.c: 115:         }
 }
 [e :U 2281 ]
-"114
-[; ;user_app.c: 114:     }
+"116
+[; ;user_app.c: 116:     }
 }
 [e :U 2274 ]
 [e $U 2275  ]
 [e :U 2276 ]
-"116
-[; ;user_app.c: 116: }
+"118
+[; ;user_app.c: 118: }
 [e :UE 2273 ]
 }

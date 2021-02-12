@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2_31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/debug\2021_ENCM369.debug.sym \
   --cmf=dist/default/debug\2021_ENCM369.debug.cmf -z -Q18F27Q43 \
-  -oC:\Users\ruhel\AppData\Local\Temp\si1s.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\ruhel\AppData\Local\Temp\siac.3 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/debug/2021_ENCM369.debug.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0560h-025FFh -pstack=STACK -ACODE=00h-01FFFFh \
   -ACONST=00h-01FFFFh -ASMALLCONST=02600h-026FFhx474 \
@@ -31,7 +31,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\ruhel\AppData\Local\Temp\si1s.o \
+  C:\Users\ruhel\AppData\Local\Temp\siac.o \
   dist/default/debug\2021_ENCM369.debug.o 
 
 Object code version is 3.11
@@ -41,7 +41,7 @@ Machine type is 18F27Q43
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ruhel\AppData\Local\Temp\si1s.o
+C:\Users\ruhel\AppData\Local\Temp\siac.o
                 idloc                            200000   200000       20        0       5
                 config                           300000   300000        A        0       4
                 init                              1FFFC    1FFFC        4     FFFE       0
@@ -238,7 +238,7 @@ UNUSED ADDRESS RANGES
                                   Symbol Table
 
 UserAppRun@i                cstackCOMRAM 00050E
-UserAppRun@u8_counter       cstackCOMRAM 000512
+UserAppRun@u8Counter        cstackCOMRAM 000512
 _ANSELA                     (abs)        000400
 _ClockSetup                 text6        01FF34
 _G_u32SystemFlags           bssCOMRAM    000501
@@ -522,7 +522,7 @@ Total ram usage:        0 bytes
 		None
  Auto vars:     Size  Location     Type
   i               4    0[COMRAM] unsigned long 
-  u8_counter      1    4[COMRAM] unsigned char 
+  u8Counter       1    4[COMRAM] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:

@@ -48,8 +48,6 @@
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
 "46095
 [v _PORTA PORTA `VEuc  1 e 1 @1230 ]
-"53732
-[v _RA0 RA0 `VEb  1 e 0 @9840 ]
 "14 D:\GITHUB\2021_ENCM369\main.c
 [v _G_u32SystemTime1ms G_u32SystemTime1ms `VEul  1 e 4 0 ]
 "15
@@ -66,7 +64,11 @@
 "95 D:\GITHUB\2021_ENCM369\user_app.c
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
 {
-"109
+"97
+[v UserAppRun@i i `ul  1 a 4 0 ]
+"98
+[v UserAppRun@u8Counter u8Counter `uc  1 a 1 4 ]
+"118
 } 0
 "76
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]

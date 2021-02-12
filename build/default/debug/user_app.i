@@ -27365,21 +27365,23 @@ void UserAppInitialize(void)
 void UserAppRun(void)
 {
     u32 i;
-    u8 u8_counter=0;
+    u8 u8Counter=0;
     while(1)
     {
-      u8_counter+=1;
+      u8Counter+=1;
         i=0;
 
-        if(u8_counter<128)
+        if(u8Counter<64)
         {
-            PORTA=128+u8_counter;
-                 for(i=0;i<200000;i++){
-                      }
+            PORTA=128+u8Counter;
+                 for(i=0;i<200000;i++)
+                 {
+
+                 }
         }
         else
         {
-            u8_counter=0;
+            u8Counter=0;
         }
     }
 

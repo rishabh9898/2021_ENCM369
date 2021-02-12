@@ -27364,16 +27364,25 @@ void UserAppInitialize(void)
 # 95 "user_app.c"
 void UserAppRun(void)
 {
-
+    u32 i;
+    u8 u8Counter=0;
     while(1)
     {
-        RA0=1;
-        _delay((unsigned long)((250)*(16000000/4000.0)));
-        RA0=0;
-        _delay((unsigned long)((250)*(16000000/4000.0)));
-        break;
+      u8Counter+=1;
+        i=0;
+
+        if(u8Counter<128)
+        {
+            PORTA=128+u8Counter;
+                 for(i=0;i<200000;i++)
+                 {
+
+                 }
+        }
+        else
+        {
+            u8Counter=0;
+        }
     }
-
-
 
 }
