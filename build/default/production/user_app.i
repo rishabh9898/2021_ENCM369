@@ -27371,7 +27371,7 @@ void UserAppRun(void)
       u8Counter+=1;
         i=0;
 
-        if(u8Counter<128)
+        if(u8Counter<64)
         {
             PORTA=128+u8Counter;
                  for(i=0;i<200000;i++)

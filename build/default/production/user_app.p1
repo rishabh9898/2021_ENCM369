@@ -2630,8 +2630,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user_app.c: 102:         i=0;
 [e = _i -> -> -> 0 `i `l `ul ]
 "104
-[; ;user_app.c: 104:         if(u8Counter<128)
-[e $ ! < -> _u8Counter `i -> 128 `i 2277  ]
+[; ;user_app.c: 104:         if(u8Counter<64)
+[e $ ! < -> _u8Counter `i -> 64 `i 2277  ]
 "105
 [; ;user_app.c: 105:         {
 {
