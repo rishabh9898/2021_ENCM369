@@ -27364,25 +27364,26 @@ void UserAppInitialize(void)
 # 95 "user_app.c"
 void UserAppRun(void)
 {
-    u32 i;
-    u8 u8Counter=0;
-    while(1)
+    static u32 u32Counter=0;
+    static _Bool bLedstate=1;
+    static u32 Buttonold=0;
+
+    if(RB5==1)
     {
-      u8Counter+=1;
-        i=0;
-
-        if(u8Counter<64)
+        if(bLedstate==1 && u32Counter<64)
         {
-            PORTA=128+u8Counter;
-                 for(i=0;i<200000;i++)
-                 {
-
-                 }
+            u32Counter+=1;
+            LATA=128+u32Counter;
         }
-        else
+        else if((PORTB & 0xff)==0x10)
         {
-            u8Counter=0;
+            bLedstate=0;
         }
+        else{
+            u32Counter=0;
+        }
+
     }
+
 
 }

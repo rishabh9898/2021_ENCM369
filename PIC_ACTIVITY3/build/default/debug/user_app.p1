@@ -1,7 +1,13 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"46095 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 46095: extern volatile unsigned char PORTA __attribute__((address(0x4CE)));
-[v _PORTA `Vuc ~T0 @X0 0 e@1230 ]
+"54044 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 54044: extern volatile __bit RB5 __attribute__((address(0x267D)));
+[v _RB5 `Vb ~T0 @X0 0 e@9853 ]
+"45585
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 45585: extern volatile unsigned char LATA __attribute__((address(0x4BE)));
+[v _LATA `Vuc ~T0 @X0 0 e@1214 ]
+"46157
+[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 46157: extern volatile unsigned char PORTB __attribute__((address(0x4CF)));
+[v _PORTB `Vuc ~T0 @X0 0 e@1231 ]
 "25 ./configuration.h
 [p x FEXTOSC  =  OFF     ]
 "26
@@ -2611,74 +2617,76 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _UserAppRun ]
 [f ]
 "97
-[; ;user_app.c: 97:     u32 i;
-[v _i `ul ~T0 @X0 1 a ]
+[; ;user_app.c: 97:     static u32 u32Counter=0;
+[v F15920 `ul ~T0 @X0 1 s u32Counter ]
+[i F15920
+-> -> -> 0 `i `l `ul
+]
 "98
-[; ;user_app.c: 98:     u8 u8Counter=0;
-[v _u8Counter `uc ~T0 @X0 1 a ]
-[e = _u8Counter -> -> 0 `i `uc ]
+[; ;user_app.c: 98:     static _Bool bLedstate=1;
+[v F15921 `a ~T0 @X0 1 s bLedstate ]
+[i F15921
+-> -> 1 `i `a
+]
 "99
-[; ;user_app.c: 99:     while(1)
-[e :U 2275 ]
-"100
-[; ;user_app.c: 100:     {
-{
+[; ;user_app.c: 99:     static u32 Buttonold=0;
+[v F15922 `ul ~T0 @X0 1 s Buttonold ]
+[i F15922
+-> -> -> 0 `i `l `ul
+]
 "101
-[; ;user_app.c: 101:       u8Counter+=1;
-[e =+ _u8Counter -> -> 1 `i `uc ]
+[; ;user_app.c: 101:     if(RB5==1)
+[e $ ! == -> _RB5 `i -> 1 `i 2274  ]
 "102
-[; ;user_app.c: 102:         i=0;
-[e = _i -> -> -> 0 `i `l `ul ]
+[; ;user_app.c: 102:     {
+{
+"103
+[; ;user_app.c: 103:         if(bLedstate==1 && u32Counter<64)
+[e $ ! && == -> F15921 `i -> 1 `i < F15920 -> -> -> 64 `i `l `ul 2275  ]
 "104
-[; ;user_app.c: 104:         if(u8Counter<64)
-[e $ ! < -> _u8Counter `i -> 64 `i 2277  ]
+[; ;user_app.c: 104:         {
+{
 "105
-[; ;user_app.c: 105:         {
-{
+[; ;user_app.c: 105:             u32Counter+=1;
+[e =+ F15920 -> -> -> 1 `i `l `ul ]
 "106
-[; ;user_app.c: 106:             PORTA=128+u8Counter;
-[e = _PORTA -> + -> 128 `i -> _u8Counter `i `uc ]
+[; ;user_app.c: 106:             LATA=128+u32Counter;
+[e = _LATA -> + -> -> -> 128 `i `l `ul F15920 `uc ]
 "107
-[; ;user_app.c: 107:                  for(i=0;i<200000;i++)
-{
-[e = _i -> -> -> 0 `i `l `ul ]
-[e $ < _i -> -> 200000 `l `ul 2278  ]
-[e $U 2279  ]
-[e :U 2278 ]
+[; ;user_app.c: 107:         }
+}
+[e $U 2276  ]
 "108
-[; ;user_app.c: 108:                  {
+[; ;user_app.c: 108:         else if((PORTB & 0xff)==0x10)
+[e :U 2275 ]
+[e $ ! == & -> _PORTB `i -> 255 `i -> 16 `i 2277  ]
+"109
+[; ;user_app.c: 109:         {
 {
 "110
-[; ;user_app.c: 110:                  }
-}
-[e ++ _i -> -> -> 1 `i `l `ul ]
-[e $ < _i -> -> 200000 `l `ul 2278  ]
-[e :U 2279 ]
-}
+[; ;user_app.c: 110:             bLedstate=0;
+[e = F15921 -> -> 0 `i `a ]
 "111
 [; ;user_app.c: 111:         }
 }
-[e $U 2281  ]
+[e $U 2278  ]
 "112
-[; ;user_app.c: 112:         else
+[; ;user_app.c: 112:         else{
 [e :U 2277 ]
-"113
-[; ;user_app.c: 113:         {
 {
+"113
+[; ;user_app.c: 113:             u32Counter=0;
+[e = F15920 -> -> -> 0 `i `l `ul ]
 "114
-[; ;user_app.c: 114:             u8Counter=0;
-[e = _u8Counter -> -> 0 `i `uc ]
-"115
-[; ;user_app.c: 115:         }
+[; ;user_app.c: 114:         }
 }
-[e :U 2281 ]
+[e :U 2278 ]
+[e :U 2276 ]
 "116
 [; ;user_app.c: 116:     }
 }
 [e :U 2274 ]
-[e $U 2275  ]
-[e :U 2276 ]
-"118
-[; ;user_app.c: 118: }
+"119
+[; ;user_app.c: 119: }
 [e :UE 2273 ]
 }

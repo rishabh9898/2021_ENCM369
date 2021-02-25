@@ -94,27 +94,28 @@ Promises:
 */
 void UserAppRun(void)
 {
-    u32 i;
-    u8 u8Counter=0;
-    while(1)
+    static u32 u32Counter=0;
+    static bool bLedstate=1;
+    static u32 Buttonold=0;
+    
+    if(RB5==1)
     {
-      u8Counter+=1;
-        i=0;
-        
-        if(u8Counter<64)
+        if(bLedstate==1 && u32Counter<64)
         {
-            PORTA=128+u8Counter;  //counter of bits 0b1000 0000  (128) -> 0b0111 1111 (255)
-                 for(i=0;i<200000;i++)
-                 { 
-                     //Delay loop of 250 ms
-                 }  
+            u32Counter+=1;
+            LATA=128+u32Counter;
         }
-        else
+        else if((PORTB & 0xff)==0x10)
         {
-            u8Counter=0;
-        }       
+            bLedstate=0;
+        }   
+        else{
+            u32Counter=0;
+        }
+        
     }
-  
+    
+    
 } /* end UserAppRun */
 
 
