@@ -27364,26 +27364,25 @@ void UserAppInitialize(void)
 # 95 "user_app.c"
 void UserAppRun(void)
 {
-    static u32 u32Counter=0;
-    static _Bool bLedstate=1;
-    static u32 Buttonold=0;
+    static u32 u32Counter=0x0;
+    u32 Led=0;
+    static u32 Buttonold=1;
+    u32 Buttonnew=PORTB & 0x20 ;
 
-    if(RB5==1)
+    if((Buttonold==0) && (Buttonnew==0x20))
     {
-        if(bLedstate==1 && u32Counter<64)
+        if(Led==0 && u32Counter<0xc0)
         {
             u32Counter+=1;
-            LATA=128+u32Counter;
+            Led=1;
+            LATA+=0x01;;
         }
-        else if((PORTB & 0xff)==0x10)
+        else
         {
-            bLedstate=0;
+            Buttonnew=PORTB & 0x20;
+            Led=0;
         }
-        else{
-            u32Counter=0;
-        }
-
     }
-
+   Buttonold=Buttonnew;
 
 }
