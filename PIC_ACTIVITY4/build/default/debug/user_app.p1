@@ -2614,10 +2614,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _UserAppRun ]
 [f ]
 "97
-[; ;user_app.c: 97:     static u32 u32Counter=0x0;
+[; ;user_app.c: 97:     static u32 u32Counter=0x80;
 [v F15920 `ul ~T0 @X0 1 s u32Counter ]
 [i F15920
--> -> -> 0 `i `l `ul
+-> -> -> 128 `i `l `ul
 ]
 "98
 [; ;user_app.c: 98:     u32 Led=0;
@@ -2652,8 +2652,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user_app.c: 107:             Led=1;
 [e = _Led -> -> -> 1 `i `l `ul ]
 "108
-[; ;user_app.c: 108:             LATA+=0x01;;
-[e =+ _LATA -> -> 1 `i `Vuc ]
+[; ;user_app.c: 108:             LATA^=u32Counter^LATA;;
+[e =^ _LATA -> ^ F15920 -> _LATA `ul `Vuc ]
 "109
 [; ;user_app.c: 109:         }
 }

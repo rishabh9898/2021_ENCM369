@@ -27364,7 +27364,7 @@ void UserAppInitialize(void)
 # 95 "user_app.c"
 void UserAppRun(void)
 {
-    static u32 u32Counter=0x0;
+    static u32 u32Counter=0x80;
     u32 Led=0;
     static u32 Buttonold=1;
     u32 Buttonnew=PORTB & 0x20 ;
@@ -27375,7 +27375,7 @@ void UserAppRun(void)
         {
             u32Counter+=1;
             Led=1;
-            LATA+=0x01;;
+            LATA^=u32Counter^LATA;;
         }
         else
         {
