@@ -39,11 +39,29 @@
 [v _main main `(v  1 e 1 0 ]
 "76 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY3\user_app.c
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
-"95
+"96
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
-"37918 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
+"120
+[v _TimeXus TimeXus `(v  1 e 1 0 ]
+"22235 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
+[v _TMR0L TMR0L `VEuc  1 e 1 @792 ]
+"22373
+[v _TMR0H TMR0H `VEuc  1 e 1 @793 ]
+"22627
+[v _T0CON0 T0CON0 `VEuc  1 e 1 @794 ]
+"22725
+[v _T0CON1 T0CON1 `VEuc  1 e 1 @795 ]
 "37918
 [v _ANSELA ANSELA `VEuc  1 e 1 @1024 ]
+<<<<<<< Updated upstream:PIC_ACTIVITY3/dist/default/debug/PIC_ACTIVITY3.debug.sdb
+=======
+"38414
+[v _ANSELB ANSELB `VEuc  1 e 1 @1032 ]
+"44870
+[v _PIR3 PIR3 `VEuc  1 e 1 @1201 ]
+"45585
+[v _LATA LATA `VEuc  1 e 1 @1214 ]
+>>>>>>> Stashed changes:PIC_ACTIVITY4/dist/default/debug/PIC_ACTIVITY4.debug.sdb
 "45840
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
 "46095
@@ -59,8 +77,9 @@
 "35 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY3\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"67
+"72
 } 0
+<<<<<<< Updated upstream:PIC_ACTIVITY3/dist/default/debug/PIC_ACTIVITY3.debug.sdb
 "95 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY3\user_app.c
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
 {
@@ -68,12 +87,32 @@
 [v UserAppRun@i i `ul  1 a 4 0 ]
 "98
 [v UserAppRun@u8Counter u8Counter `uc  1 a 1 4 ]
+=======
+"96 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY4\user_app.c
+[v _UserAppRun UserAppRun `(v  1 e 1 0 ]
+{
+"98
+[v UserAppRun@u8Counter u8Counter `ul  1 a 4 2 ]
+"104
+[v UserAppRun@u8Pattern u8Pattern `[2]uc  1 a 2 0 ]
+"99
+[v UserAppRun@u8Var u8Var `uc  1 a 1 6 ]
+"101
+[v UserAppRun@increments increments `uc  1 s 1 increments ]
+[v UserAppRun@F15926 F15926 `[2]uc  1 s 2 F15926 ]
+>>>>>>> Stashed changes:PIC_ACTIVITY4/dist/default/debug/PIC_ACTIVITY4.debug.sdb
 "118
 } 0
 "76
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
 {
-"80
+"81
+} 0
+"120
+[v _TimeXus TimeXus `(v  1 e 1 0 ]
+{
+[v TimeXus@u16Time_delay u16Time_delay `us  1 p 2 0 ]
+"131
 } 0
 "133 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY3\encm369_pic18.c
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]

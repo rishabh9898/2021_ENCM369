@@ -75,7 +75,8 @@ Promises:
 */
 void UserAppInitialize(void)
 {
-
+    T0CON0 = 0x90;
+    T0CON1 = 0x54;
 
 } /* end UserAppInitialize() */
 
@@ -94,6 +95,7 @@ Promises:
 */
 void UserAppRun(void)
 {
+<<<<<<< Updated upstream:PIC_ACTIVITY3/user_app.c
     u32 i;
     u8 u8Counter=0;
     while(1)
@@ -115,8 +117,42 @@ void UserAppRun(void)
         }       
     }
   
+=======
+     u32 u8Counter=LATA;
+     u8 u8Var = u8Counter & 0x80;
+      static u8 n=2;
+      static u8 increments=0;// clears 6LSBs in temporary variable.
+    
+    //The pattern followed by LEDs.
+    u8 u8Pattern[] = {0x01, 0x02};
+    if(increments < n)// Counts upto the number of elements in the array.
+    {
+        increments+=1;
+    }
+    else
+    {
+        increments = 0;
+    }
+    // Perform Bitwise OR operation, write to LATA and displays on LEDs. 
+    u8Var |= u8Pattern[increments];
+    LATA = u8Var;
+    
+    
+>>>>>>> Stashed changes:PIC_ACTIVITY4/user_app.c
 } /* end UserAppRun */
 
+void TimeXus(u16 u16Time_delay)
+{
+    T0CON0 &= 0x7F;//Disable the timer during configuration.
+    
+    //Set TMR0H and TMR0L to values specified by user.
+    TMR0H = (u8)((0xFFFF - u16Time_delay) >> 8);
+    TMR0L = (u8)((0xFFFF - u16Time_delay) & 0x00FF);
+    
+    //Clear TMR0IF and enables the timer.
+    PIR3 &= 0x7F;
+    T0CON0 |= 0x80;
+}
 
 
 /*------------------------------------------------------------------------------------------------------------------*/

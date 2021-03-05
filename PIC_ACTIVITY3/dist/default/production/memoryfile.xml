@@ -4,14 +4,24 @@
     <memory name="program">
       <units>bytes</units>
       <length>131072</length>
+<<<<<<< Updated upstream:PIC_ACTIVITY3/dist/default/production/memoryfile.xml
       <used>208</used>
       <free>130864</free>
+=======
+      <used>315</used>
+      <free>130757</free>
+>>>>>>> Stashed changes:PIC_ACTIVITY4/dist/default/production/memoryfile.xml
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>8448</length>
+<<<<<<< Updated upstream:PIC_ACTIVITY3/dist/default/production/memoryfile.xml
       <used>18</used>
       <free>8430</free>
+=======
+      <used>24</used>
+      <free>8424</free>
+>>>>>>> Stashed changes:PIC_ACTIVITY4/dist/default/production/memoryfile.xml
     </memory>
   </executable>
 </project>

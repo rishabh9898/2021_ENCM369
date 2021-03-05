@@ -27338,6 +27338,7 @@ void SystemSleep(void);
 # 27 "./user_app.h"
 void UserAppInitialize(void);
 void UserAppRun(void);
+void TimeXus(u16 u16Time_delay);
 # 158 "./configuration.h" 2
 # 26 "user_app.c" 2
 
@@ -27358,12 +27359,14 @@ extern volatile u32 G_u32SystemFlags;
 # 76 "user_app.c"
 void UserAppInitialize(void)
 {
-
+    T0CON0 = 0x90;
+    T0CON1 = 0x54;
 
 }
-# 95 "user_app.c"
+# 96 "user_app.c"
 void UserAppRun(void)
 {
+<<<<<<< Updated upstream:PIC_ACTIVITY3/build/default/debug/user_app.i
     u32 i;
     u8 u8Counter=0;
     while(1)
@@ -27383,6 +27386,39 @@ void UserAppRun(void)
         {
             u8Counter=0;
         }
+=======
+     u32 u8Counter=LATA;
+     u8 u8Var = u8Counter & 0x80;
+      static u8 n=2;
+      static u8 increments=0;
+
+
+    u8 u8Pattern[] = {0x01, 0x02};
+    if(increments < n)
+    {
+        increments+=1;
+    }
+    else
+    {
+        increments = 0;
+>>>>>>> Stashed changes:PIC_ACTIVITY4/build/default/production/user_app.i
     }
 
+    u8Var |= u8Pattern[increments];
+    LATA = u8Var;
+
+
+}
+
+void TimeXus(u16 u16Time_delay)
+{
+    T0CON0 &= 0x7F;
+
+
+    TMR0H = (u8)((0xFFFF - u16Time_delay) >> 8);
+    TMR0L = (u8)((0xFFFF - u16Time_delay) & 0x00FF);
+
+
+    PIR3 &= 0x7F;
+    T0CON0 |= 0x80;
 }

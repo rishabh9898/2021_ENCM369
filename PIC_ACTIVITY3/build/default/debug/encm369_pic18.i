@@ -27338,6 +27338,7 @@ void SystemSleep(void);
 # 27 "./user_app.h"
 void UserAppInitialize(void);
 void UserAppRun(void);
+void TimeXus(u16 u16Time_delay);
 # 158 "./configuration.h" 2
 # 24 "encm369_pic18.c" 2
 # 37 "encm369_pic18.c"
