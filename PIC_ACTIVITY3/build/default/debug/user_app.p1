@@ -1,9 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-<<<<<<< Updated upstream:PIC_ACTIVITY3/build/default/debug/user_app.p1
-"46095 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 46095: extern volatile unsigned char PORTA __attribute__((address(0x4CE)));
-[v _PORTA `Vuc ~T0 @X0 0 e@1230 ]
-=======
 "22627 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 22627: extern volatile unsigned char T0CON0 __attribute__((address(0x31A)));
 [v _T0CON0 `Vuc ~T0 @X0 0 e@794 ]
@@ -22,7 +17,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "44870
 [; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 44870: extern volatile unsigned char PIR3 __attribute__((address(0x4B1)));
 [v _PIR3 `Vuc ~T0 @X0 0 e@1201 ]
->>>>>>> Stashed changes:PIC_ACTIVITY4/build/default/production/user_app.p1
 "25 ./configuration.h
 [p x FEXTOSC  =  OFF     ]
 "26
@@ -2637,46 +2631,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _UserAppRun ]
 [f ]
-<<<<<<< Updated upstream:PIC_ACTIVITY3/build/default/debug/user_app.p1
-"97
-[; ;user_app.c: 97:     u32 i;
-[v _i `ul ~T0 @X0 1 a ]
-"98
-[; ;user_app.c: 98:     u8 u8Counter=0;
-[v _u8Counter `uc ~T0 @X0 1 a ]
-[e = _u8Counter -> -> 0 `i `uc ]
 "99
-[; ;user_app.c: 99:     while(1)
-[e :U 2275 ]
-"100
-[; ;user_app.c: 100:     {
-{
-"101
-[; ;user_app.c: 101:       u8Counter+=1;
-[e =+ _u8Counter -> -> 1 `i `uc ]
-"102
-[; ;user_app.c: 102:         i=0;
-[e = _i -> -> -> 0 `i `l `ul ]
-"104
-[; ;user_app.c: 104:         if(u8Counter<64)
-[e $ ! < -> _u8Counter `i -> 64 `i 2277  ]
-=======
-"98
-[; ;user_app.c: 98:      u32 u8Counter=LATA;
+[; ;user_app.c: 99:      u32 u8Counter=LATA;
 [v _u8Counter `ul ~T0 @X0 1 a ]
 [e = _u8Counter -> _LATA `ul ]
-"99
-[; ;user_app.c: 99:      u8 u8Var = u8Counter & 0x80;
+"100
+[; ;user_app.c: 100:      u8 u8Var = u8Counter & 0x80;
 [v _u8Var `uc ~T0 @X0 1 a ]
 [e = _u8Var -> & _u8Counter -> -> -> 128 `i `l `ul `uc ]
-"100
-[; ;user_app.c: 100:       static u8 n=2;
+"101
+[; ;user_app.c: 101:       static u8 n=2;
 [v F15924 `uc ~T0 @X0 1 s n ]
 [i F15924
 -> -> 2 `i `uc
 ]
-"101
-[; ;user_app.c: 101:       static u8 increments=0;
+"102
+[; ;user_app.c: 102:       static u8 increments=0;
 [v F15925 `uc ~T0 @X0 1 s increments ]
 [i F15925
 -> -> 0 `i `uc
@@ -2684,92 +2654,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v F15926 `uc ~T0 @X0 -> 2 `i s ]
 [i F15926
 :U ..
-"104
-[; ;user_app.c: 104:     u8 u8Pattern[] = {0x01, 0x02};
+"105
+[; ;user_app.c: 105:     u8 u8Pattern[] = {0x01, 0x02};
 -> -> 1 `i `uc
 -> -> 2 `i `uc
 ..
 ]
 [v _u8Pattern `uc ~T0 @X0 -> 2 `i a ]
 [e = _u8Pattern F15926 ]
->>>>>>> Stashed changes:PIC_ACTIVITY4/build/default/production/user_app.p1
-"105
-[; ;user_app.c: 105:     if(increments < n)
-[e $ ! < -> F15925 `i -> F15924 `i 2274  ]
 "106
-<<<<<<< Updated upstream:PIC_ACTIVITY3/build/default/debug/user_app.p1
-[; ;user_app.c: 106:             PORTA=128+u8Counter;
-[e = _PORTA -> + -> 128 `i -> _u8Counter `i `uc ]
+[; ;user_app.c: 106:     if(increments < n)
+[e $ ! < -> F15925 `i -> F15924 `i 2274  ]
 "107
-[; ;user_app.c: 107:                  for(i=0;i<200000;i++)
+[; ;user_app.c: 107:     {
 {
-[e = _i -> -> -> 0 `i `l `ul ]
-[e $ < _i -> -> 200000 `l `ul 2278  ]
-[e $U 2279  ]
-[e :U 2278 ]
 "108
-[; ;user_app.c: 108:                  {
-{
-"110
-[; ;user_app.c: 110:                  }
-}
-[e ++ _i -> -> -> 1 `i `l `ul ]
-[e $ < _i -> -> 200000 `l `ul 2278  ]
-[e :U 2279 ]
-}
-"111
-[; ;user_app.c: 111:         }
-}
-[e $U 2281  ]
-"112
-[; ;user_app.c: 112:         else
-[e :U 2277 ]
-"113
-[; ;user_app.c: 113:         {
-{
-"114
-[; ;user_app.c: 114:             u8Counter=0;
-[e = _u8Counter -> -> 0 `i `uc ]
-"115
-[; ;user_app.c: 115:         }
-}
-[e :U 2281 ]
-"116
-[; ;user_app.c: 116:     }
-}
-[e :U 2274 ]
-[e $U 2275  ]
-[e :U 2276 ]
-=======
-[; ;user_app.c: 106:     {
-{
-"107
-[; ;user_app.c: 107:         increments+=1;
+[; ;user_app.c: 108:         increments+=1;
 [e =+ F15925 -> -> 1 `i `uc ]
-"108
-[; ;user_app.c: 108:     }
+"109
+[; ;user_app.c: 109:     }
 }
 [e $U 2275  ]
-"109
-[; ;user_app.c: 109:     else
-[e :U 2274 ]
 "110
-[; ;user_app.c: 110:     {
-{
+[; ;user_app.c: 110:     else
+[e :U 2274 ]
 "111
-[; ;user_app.c: 111:         increments = 0;
-[e = F15925 -> -> 0 `i `uc ]
+[; ;user_app.c: 111:     {
+{
 "112
-[; ;user_app.c: 112:     }
+[; ;user_app.c: 112:         increments = 0;
+[e = F15925 -> -> 0 `i `uc ]
+"113
+[; ;user_app.c: 113:     }
 }
 [e :U 2275 ]
-"114
-[; ;user_app.c: 114:     u8Var |= u8Pattern[increments];
-[e =| _u8Var -> *U + &U _u8Pattern * -> F15925 `ux -> -> # *U &U _u8Pattern `ui `ux `uc ]
 "115
-[; ;user_app.c: 115:     LATA = u8Var;
+[; ;user_app.c: 115:     u8Var |= u8Pattern[increments];
+[e =| _u8Var -> *U + &U _u8Pattern * -> F15925 `ux -> -> # *U &U _u8Pattern `ui `ux `uc ]
+"116
+[; ;user_app.c: 116:     LATA = u8Var;
 [e = _LATA _u8Var ]
->>>>>>> Stashed changes:PIC_ACTIVITY4/build/default/production/user_app.p1
 "118
 [; ;user_app.c: 118: }
 [e :UE 2273 ]

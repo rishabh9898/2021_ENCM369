@@ -27366,27 +27366,7 @@ void UserAppInitialize(void)
 # 96 "user_app.c"
 void UserAppRun(void)
 {
-<<<<<<< Updated upstream:PIC_ACTIVITY3/build/default/debug/user_app.i
-    u32 i;
-    u8 u8Counter=0;
-    while(1)
-    {
-      u8Counter+=1;
-        i=0;
 
-        if(u8Counter<64)
-        {
-            PORTA=128+u8Counter;
-                 for(i=0;i<200000;i++)
-                 {
-
-                 }
-        }
-        else
-        {
-            u8Counter=0;
-        }
-=======
      u32 u8Counter=LATA;
      u8 u8Var = u8Counter & 0x80;
       static u8 n=2;
@@ -27401,12 +27381,10 @@ void UserAppRun(void)
     else
     {
         increments = 0;
->>>>>>> Stashed changes:PIC_ACTIVITY4/build/default/production/user_app.i
     }
 
     u8Var |= u8Pattern[increments];
     LATA = u8Var;
-
 
 }
 

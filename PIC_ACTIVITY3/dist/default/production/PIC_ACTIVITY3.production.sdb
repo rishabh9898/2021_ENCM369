@@ -53,15 +53,10 @@
 [v _T0CON1 T0CON1 `VEuc  1 e 1 @795 ]
 "37918
 [v _ANSELA ANSELA `VEuc  1 e 1 @1024 ]
-<<<<<<< Updated upstream:PIC_ACTIVITY3/dist/default/production/PIC_ACTIVITY3.production.sdb
-=======
-"38414
-[v _ANSELB ANSELB `VEuc  1 e 1 @1032 ]
 "44870
 [v _PIR3 PIR3 `VEuc  1 e 1 @1201 ]
 "45585
 [v _LATA LATA `VEuc  1 e 1 @1214 ]
->>>>>>> Stashed changes:PIC_ACTIVITY4/dist/default/production/PIC_ACTIVITY4.production.sdb
 "45840
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
 "46095
@@ -79,28 +74,18 @@
 {
 "72
 } 0
-<<<<<<< Updated upstream:PIC_ACTIVITY3/dist/default/production/PIC_ACTIVITY3.production.sdb
-"95 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY3\user_app.c
+"96 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY3\user_app.c
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
 {
-"97
-[v UserAppRun@i i `ul  1 a 4 0 ]
-"98
-[v UserAppRun@u8Counter u8Counter `uc  1 a 1 4 ]
-=======
-"96 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY4\user_app.c
-[v _UserAppRun UserAppRun `(v  1 e 1 0 ]
-{
-"98
-[v UserAppRun@u8Counter u8Counter `ul  1 a 4 2 ]
-"104
-[v UserAppRun@u8Pattern u8Pattern `[2]uc  1 a 2 0 ]
 "99
+[v UserAppRun@u8Counter u8Counter `ul  1 a 4 2 ]
+"105
+[v UserAppRun@u8Pattern u8Pattern `[2]uc  1 a 2 0 ]
+"100
 [v UserAppRun@u8Var u8Var `uc  1 a 1 6 ]
-"101
+"102
 [v UserAppRun@increments increments `uc  1 s 1 increments ]
 [v UserAppRun@F15926 F15926 `[2]uc  1 s 2 F15926 ]
->>>>>>> Stashed changes:PIC_ACTIVITY4/dist/default/production/PIC_ACTIVITY4.production.sdb
 "118
 } 0
 "76
