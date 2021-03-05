@@ -95,29 +95,7 @@ Promises:
 */
 void UserAppRun(void)
 {
-<<<<<<< Updated upstream:PIC_ACTIVITY3/user_app.c
-    u32 i;
-    u8 u8Counter=0;
-    while(1)
-    {
-      u8Counter+=1;
-        i=0;
-        
-        if(u8Counter<64)
-        {
-            PORTA=128+u8Counter;  //counter of bits 0b1000 0000  (128) -> 0b0111 1111 (255)
-                 for(i=0;i<200000;i++)
-                 { 
-                     //Delay loop of 250 ms
-                 }  
-        }
-        else
-        {
-            u8Counter=0;
-        }       
-    }
-  
-=======
+
      u32 u8Counter=LATA;
      u8 u8Var = u8Counter & 0x80;
       static u8 n=2;
@@ -136,9 +114,7 @@ void UserAppRun(void)
     // Perform Bitwise OR operation, write to LATA and displays on LEDs. 
     u8Var |= u8Pattern[increments];
     LATA = u8Var;
-    
-    
->>>>>>> Stashed changes:PIC_ACTIVITY4/user_app.c
+
 } /* end UserAppRun */
 
 void TimeXus(u16 u16Time_delay)
