@@ -99,9 +99,8 @@ void UserAppRun(void)
      u32 u8Counter=LATA;
      u8 u8Var = u8Counter & 0x80;
       static u8 n=2;
-      static u8 increments=0;// clears 6LSBs in temporary variable.
+      static u8 increments=0;
     
-    //The pattern followed by LEDs.
     u8 u8Pattern[] = {0x01, 0x02};
     if(increments < n)// Counts upto the number of elements in the array.
     {
