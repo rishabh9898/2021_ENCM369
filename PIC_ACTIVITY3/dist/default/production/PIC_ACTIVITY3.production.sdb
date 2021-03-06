@@ -37,11 +37,11 @@
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]
 "35 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY3\main.c
 [v _main main `(v  1 e 1 0 ]
-"76 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY3\user_app.c
+"77 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY3\user_app.c
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
-"96
+"98
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
-"120
+"126
 [v _TimeXus TimeXus `(v  1 e 1 0 ]
 "22235 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
 [v _TMR0L TMR0L `VEuc  1 e 1 @792 ]
@@ -74,30 +74,31 @@
 {
 "72
 } 0
-"96 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY3\user_app.c
+"98 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY3\user_app.c
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
 {
-"99
-[v UserAppRun@u8Counter u8Counter `ul  1 a 4 2 ]
-"105
-[v UserAppRun@u8Pattern u8Pattern `[2]uc  1 a 2 0 ]
+"104
+[v UserAppRun@au8Pattern au8Pattern `[5]uc  1 a 5 2 ]
 "100
-[v UserAppRun@u8Var u8Var `uc  1 a 1 6 ]
-"102
-[v UserAppRun@increments increments `uc  1 s 1 increments ]
-[v UserAppRun@F15926 F15926 `[2]uc  1 s 2 F15926 ]
-"118
+[v UserAppRun@u16Count u16Count `ul  1 s 4 u16Count ]
+"101
+[v UserAppRun@toggle toggle `uc  1 s 1 toggle ]
+"103
+[v UserAppRun@F15925 F15925 `[5]uc  1 s 5 F15925 ]
+"105
+[v UserAppRun@n n `uc  1 s 1 n ]
+"124
 } 0
-"76
+"77
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
 {
-"81
+"83
 } 0
-"120
+"126
 [v _TimeXus TimeXus `(v  1 e 1 0 ]
 {
 [v TimeXus@u16Time_delay u16Time_delay `us  1 p 2 0 ]
-"131
+"137
 } 0
 "133 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY3\encm369_pic18.c
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]

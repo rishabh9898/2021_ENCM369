@@ -27353,38 +27353,44 @@ volatile u8 G_u8UserAppFlags;
 
 
 
+
 extern volatile u32 G_u32SystemTime1ms;
 extern volatile u32 G_u32SystemTime1s;
 extern volatile u32 G_u32SystemFlags;
-# 76 "user_app.c"
+# 77 "user_app.c"
 void UserAppInitialize(void)
 {
+    LATA=0x80;
     T0CON0 = 0x90;
     T0CON1 = 0x54;
 
 }
-# 96 "user_app.c"
+# 98 "user_app.c"
 void UserAppRun(void)
 {
-
-     u32 u8Counter=LATA;
-     u8 u8Var = u8Counter & 0x80;
-      static u8 n=2;
-      static u8 increments=0;
-
-
-    u8 u8Pattern[] = {0x01, 0x02};
-    if(increments < n)
-    {
-        increments+=1;
+    static u32 u16Count=0;
+    static u8 toggle=0;
+    u16Count+=1;
+    u16 Temp=LATA;
+    u8 au8Pattern[]={0x01,0x02,0x04,0x10,0x20};
+    static u8 n=0;
+    if(u16Count==500 && toggle==0){
+        if(n<5){
+                u16Count=0;
+                LATA=au8Pattern[n];
+                toggle=1;
+                n+=1;
+        }
+        else{
+            n=0;
+            u16Count=0;
+            LATA=au8Pattern[n];
+            toggle=1;
+        }
     }
-    else
-    {
-        increments = 0;
+    else{
+        toggle=0;
     }
-
-    u8Var |= u8Pattern[increments];
-    LATA = u8Var;
 
 }
 

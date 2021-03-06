@@ -27386,7 +27386,7 @@ void main(void)
     (LATA &=0x7F);
     SystemSleep();
     TimeXus(0x3e8);
-    while(PIR3 & 0x80)
+    while((PIR3 & 0x80)!=0x80)
     {
 
     }

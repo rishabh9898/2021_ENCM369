@@ -30,7 +30,8 @@ Global variable definitions with scope across entire project.
 All Global variable names shall start with "G_<type>UserApp1"
 ***********************************************************************************************************************/
 /* New variables */
-volatile u8 G_u8UserAppFlags;                             /*!< @brief Global state flags */
+volatile u8 G_u8UserAppFlags;  
+  /*!< @brief Global state flags */
 
 
 /*--------------------------------------------------------------------------------------------------------------------*/
@@ -74,7 +75,8 @@ Promises:
 
 */
 void UserAppInitialize(void)
-{
+{   
+    LATA=0x80;
     T0CON0 = 0x90;
     T0CON1 = 0x54;
 
@@ -95,25 +97,30 @@ Promises:
 */
 void UserAppRun(void)
 {
-
-     u32 u8Counter=LATA;
-     u8 u8Var = u8Counter & 0x80;
-      static u8 n=2;
-      static u8 increments=0;
+    static u32 u16Count=0;
+    static u8 toggle=0;
+    u16Count+=1;
+    u16 Temp=LATA;
+    u8 au8Pattern[]={0x01,0x02,0x04,0x10,0x20};
+    static u8 n=0;
+    if(u16Count==500 && toggle==0){
+        if(n<5){
+                u16Count=0;
+                LATA=au8Pattern[n]; 
+                toggle=1;
+                n+=1;
+        } 
+        else{
+            n=0;
+            u16Count=0;
+            LATA=au8Pattern[n];
+            toggle=1;
+        }
+    }
+    else{
+        toggle=0;
+    }
     
-    u8 u8Pattern[] = {0x01, 0x02};
-    if(increments < n)// Counts upto the number of elements in the array.
-    {
-        increments+=1;
-    }
-    else
-    {
-        increments = 0;
-    }
-    // Perform Bitwise OR operation, write to LATA and displays on LEDs. 
-    u8Var |= u8Pattern[increments];
-    LATA = u8Var;
-
 } /* end UserAppRun */
 
 void TimeXus(u16 u16Time_delay)
