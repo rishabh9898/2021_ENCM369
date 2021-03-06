@@ -27339,6 +27339,7 @@ void SystemSleep(void);
 void UserAppInitialize(void);
 void UserAppRun(void);
 void TimeXus(u16 u16Time_delay);
+u32 ButtonSpeed();
 # 158 "./configuration.h" 2
 # 26 "user_app.c" 2
 
@@ -27368,28 +27369,28 @@ void UserAppInitialize(void)
 # 98 "user_app.c"
 void UserAppRun(void)
 {
+
     static u32 u16Count=0;
-    static u8 toggle=0;
+    static u8 Toggle=0;
     u16Count+=1;
-    u16 Temp=LATA;
     u8 au8Pattern[]={0x01,0x02,0x04,0x10,0x20};
     static u8 n=0;
-    if(u16Count==500 && toggle==0){
+    if(u16Count==500 && Toggle==0){
         if(n<5){
                 u16Count=0;
-                LATA=au8Pattern[n];
-                toggle=1;
+                LATA=au8Pattern[n]|0x80;
+                Toggle=1;
                 n+=1;
         }
         else{
             n=0;
             u16Count=0;
-            LATA=au8Pattern[n];
-            toggle=1;
+            LATA=au8Pattern[n]|0x80;
+            Toggle=1;
         }
     }
     else{
-        toggle=0;
+        Toggle=0;
     }
 
 }

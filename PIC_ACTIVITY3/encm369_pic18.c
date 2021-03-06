@@ -92,6 +92,9 @@ void GpioSetup(void)
     TRISA=0x00;
     ANSELA=0x00;
     
+    PORTB= 0x00;
+    ANSELB= 0x00;
+    TRISB= 0x30;
   
 } /* end GpioSetup() */
 

@@ -27343,6 +27343,7 @@ void SystemSleep(void);
 void UserAppInitialize(void);
 void UserAppRun(void);
 void TimeXus(u16 u16Time_delay);
+u32 ButtonSpeed();
 # 158 "./configuration.h" 2
 # 6 "main.c" 2
 

@@ -2634,25 +2634,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _UserAppRun ]
 [f ]
-"100
-[; ;user_app.c: 100:     static u32 u16Count=0;
-[v F15922 `ul ~T0 @X0 1 s u16Count ]
-[i F15922
+"101
+[; ;user_app.c: 101:     static u32 u16Count=0;
+[v F15923 `ul ~T0 @X0 1 s u16Count ]
+[i F15923
 -> -> -> 0 `i `l `ul
 ]
-"101
-[; ;user_app.c: 101:     static u8 toggle=0;
-[v F15923 `uc ~T0 @X0 1 s toggle ]
-[i F15923
+"102
+[; ;user_app.c: 102:     static u8 Toggle=0;
+[v F15924 `uc ~T0 @X0 1 s Toggle ]
+[i F15924
 -> -> 0 `i `uc
 ]
-"102
-[; ;user_app.c: 102:     u16Count+=1;
-[e =+ F15922 -> -> -> 1 `i `l `ul ]
 "103
-[; ;user_app.c: 103:     u16 Temp=LATA;
-[v _Temp `us ~T0 @X0 1 a ]
-[e = _Temp -> _LATA `us ]
+[; ;user_app.c: 103:     u16Count+=1;
+[e =+ F15923 -> -> -> 1 `i `l `ul ]
 [v F15925 `uc ~T0 @X0 -> 5 `i s ]
 [i F15925
 :U ..
@@ -2674,8 +2670,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "106
-[; ;user_app.c: 106:     if(u16Count==500 && toggle==0){
-[e $ ! && == F15922 -> -> -> 500 `i `l `ul == -> F15923 `i -> 0 `i 2274  ]
+[; ;user_app.c: 106:     if(u16Count==500 && Toggle==0){
+[e $ ! && == F15923 -> -> -> 500 `i `l `ul == -> F15924 `i -> 0 `i 2274  ]
 {
 "107
 [; ;user_app.c: 107:         if(n<5){
@@ -2683,13 +2679,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "108
 [; ;user_app.c: 108:                 u16Count=0;
-[e = F15922 -> -> -> 0 `i `l `ul ]
+[e = F15923 -> -> -> 0 `i `l `ul ]
 "109
-[; ;user_app.c: 109:                 LATA=au8Pattern[n];
-[e = _LATA *U + &U _au8Pattern * -> F15927 `ux -> -> # *U &U _au8Pattern `ui `ux ]
+[; ;user_app.c: 109:                 LATA=au8Pattern[n]|0x80;
+[e = _LATA -> | -> *U + &U _au8Pattern * -> F15927 `ux -> -> # *U &U _au8Pattern `ui `ux `i -> 128 `i `uc ]
 "110
-[; ;user_app.c: 110:                 toggle=1;
-[e = F15923 -> -> 1 `i `uc ]
+[; ;user_app.c: 110:                 Toggle=1;
+[e = F15924 -> -> 1 `i `uc ]
 "111
 [; ;user_app.c: 111:                 n+=1;
 [e =+ F15927 -> -> 1 `i `uc ]
@@ -2706,13 +2702,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = F15927 -> -> 0 `i `uc ]
 "115
 [; ;user_app.c: 115:             u16Count=0;
-[e = F15922 -> -> -> 0 `i `l `ul ]
+[e = F15923 -> -> -> 0 `i `l `ul ]
 "116
-[; ;user_app.c: 116:             LATA=au8Pattern[n];
-[e = _LATA *U + &U _au8Pattern * -> F15927 `ux -> -> # *U &U _au8Pattern `ui `ux ]
+[; ;user_app.c: 116:             LATA=au8Pattern[n]|0x80;
+[e = _LATA -> | -> *U + &U _au8Pattern * -> F15927 `ux -> -> # *U &U _au8Pattern `ui `ux `i -> 128 `i `uc ]
 "117
-[; ;user_app.c: 117:             toggle=1;
-[e = F15923 -> -> 1 `i `uc ]
+[; ;user_app.c: 117:             Toggle=1;
+[e = F15924 -> -> 1 `i `uc ]
 "118
 [; ;user_app.c: 118:         }
 }
@@ -2726,8 +2722,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 2274 ]
 {
 "121
-[; ;user_app.c: 121:         toggle=0;
-[e = F15923 -> -> 0 `i `uc ]
+[; ;user_app.c: 121:         Toggle=0;
+[e = F15924 -> -> 0 `i `uc ]
 "122
 [; ;user_app.c: 122:     }
 }

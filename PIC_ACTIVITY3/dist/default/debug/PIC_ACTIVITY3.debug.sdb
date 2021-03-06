@@ -31,9 +31,9 @@
 [v _ClockSetup ClockSetup `(v  1 e 1 0 ]
 "89
 [v _GpioSetup GpioSetup `(v  1 e 1 0 ]
-"111
+"114
 [v _SysTickSetup SysTickSetup `(v  1 e 1 0 ]
-"133
+"136
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]
 "35 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY3\main.c
 [v _main main `(v  1 e 1 0 ]
@@ -53,14 +53,20 @@
 [v _T0CON1 T0CON1 `VEuc  1 e 1 @795 ]
 "37918
 [v _ANSELA ANSELA `VEuc  1 e 1 @1024 ]
+"38414
+[v _ANSELB ANSELB `VEuc  1 e 1 @1032 ]
 "44870
 [v _PIR3 PIR3 `VEuc  1 e 1 @1201 ]
 "45585
 [v _LATA LATA `VEuc  1 e 1 @1214 ]
 "45840
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
+"45902
+[v _TRISB TRISB `VEuc  1 e 1 @1223 ]
 "46095
 [v _PORTA PORTA `VEuc  1 e 1 @1230 ]
+"46157
+[v _PORTB PORTB `VEuc  1 e 1 @1231 ]
 "14 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY3\main.c
 [v _G_u32SystemTime1ms G_u32SystemTime1ms `VEul  1 e 4 0 ]
 "15
@@ -78,11 +84,11 @@
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
 {
 "104
-[v UserAppRun@au8Pattern au8Pattern `[5]uc  1 a 5 2 ]
-"100
-[v UserAppRun@u16Count u16Count `ul  1 s 4 u16Count ]
+[v UserAppRun@au8Pattern au8Pattern `[5]uc  1 a 5 0 ]
 "101
-[v UserAppRun@toggle toggle `uc  1 s 1 toggle ]
+[v UserAppRun@u16Count u16Count `ul  1 s 4 u16Count ]
+"102
+[v UserAppRun@Toggle Toggle `uc  1 s 1 Toggle ]
 "103
 [v UserAppRun@F15925 F15925 `[5]uc  1 s 5 F15925 ]
 "105
@@ -100,20 +106,20 @@
 [v TimeXus@u16Time_delay u16Time_delay `us  1 p 2 0 ]
 "137
 } 0
-"133 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY3\encm369_pic18.c
+"136 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY3\encm369_pic18.c
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]
 {
-"136
+"139
 } 0
-"111
+"114
 [v _SysTickSetup SysTickSetup `(v  1 e 1 0 ]
 {
-"116
+"119
 } 0
 "89
 [v _GpioSetup GpioSetup `(v  1 e 1 0 ]
 {
-"96
+"99
 } 0
 "70
 [v _ClockSetup ClockSetup `(v  1 e 1 0 ]
