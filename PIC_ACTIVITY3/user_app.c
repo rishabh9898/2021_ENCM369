@@ -100,7 +100,6 @@ void UserAppRun(void)
     static u32 u16Count=0;
     static u8 toggle=0;
     u16Count+=1;
-    u16 Temp=LATA;
     u8 au8Pattern[]={0x01,0x02,0x04,0x10,0x20};
     static u8 n=0;
     if(u16Count==500 && toggle==0){
