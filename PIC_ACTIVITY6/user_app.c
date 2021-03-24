@@ -120,6 +120,28 @@ void UserAppRun(void)
     static u8 u8Index=0;
     DAC1DATL= UserApp_au8sinTable[u8Index];
     u8Index+=4;
+
+#if 0
+    static bool bGoingUp= true;
+   /* Checking to switch slopes of triangle*/
+   if( DAC1DATL==255)
+   {
+       bGoingUp=false;
+   }
+   if(DAC1DATL==0){
+       bGoingUp=true;
+   }
+   if(bGoingUp)
+   {
+       DAC1DATL++; 
+   }
+   else
+   {
+       DAC1DATL--; 
+   }
+      /*One step in analog , automatically does 20mv step */
+#endif
+
    
 } /* end UserAppRun */
 

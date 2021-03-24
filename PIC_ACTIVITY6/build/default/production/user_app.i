@@ -27399,7 +27399,7 @@ void UserAppRun(void)
     static u8 u8Index=0;
     DAC1DATL= UserApp_au8sinTable[u8Index];
     u8Index+=4;
-
+# 146 "user_app.c"
 }
 
 void TimeXus(u16 u16Time_delay)
