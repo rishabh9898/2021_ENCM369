@@ -27377,21 +27377,18 @@ void main(void)
 
   while(1)
   {
-
-
-
+# 66 "main.c"
     UserAppRun();
-
-
 
     (LATA &=0x7F);
     SystemSleep();
-    TimeXus(0x3e8);
+    TimeXus(11);
     while((PIR3 & 0x80)!=0x80)
     {
 
     }
     (LATA |=0x80);
+
 
   }
 

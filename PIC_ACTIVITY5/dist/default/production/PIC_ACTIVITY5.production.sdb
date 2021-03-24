@@ -37,13 +37,15 @@
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]
 "35 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY5\main.c
 [v _main main `(v  1 e 1 0 ]
-"77 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY5\user_app.c
+"95 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY5\user_app.c
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
-"98
+"118
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
-"104
+"126
 [v _TimeXus TimeXus `(v  1 e 1 0 ]
-"3236 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
+"3158 C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h
+[v _DAC1DATL DAC1DATL `VEuc  1 e 1 @125 ]
+"3236
 [v _DAC1CON DAC1CON `VEuc  1 e 1 @127 ]
 "22235
 [v _TMR0L TMR0L `VEuc  1 e 1 @792 ]
@@ -69,26 +71,30 @@
 [v _G_u32SystemFlags G_u32SystemFlags `VEul  1 e 4 0 ]
 "33 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY5\user_app.c
 [v _G_u8UserAppFlags G_u8UserAppFlags `VEuc  1 e 1 0 ]
+"48
+[v _UserApp_au8sinTable UserApp_au8sinTable `[256]uc  1 s 256 UserApp_au8sinTable ]
 "35 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY5\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"72
+"80
 } 0
-"98 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY5\user_app.c
+"118 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY5\user_app.c
 [v _UserAppRun UserAppRun `(v  1 e 1 0 ]
 {
-"102
+"120
+[v UserAppRun@u8Index u8Index `uc  1 s 1 u8Index ]
+"124
 } 0
-"77
+"95
 [v _UserAppInitialize UserAppInitialize `(v  1 e 1 0 ]
 {
-"83
+"103
 } 0
-"104
+"126
 [v _TimeXus TimeXus `(v  1 e 1 0 ]
 {
 [v TimeXus@u16Time_delay u16Time_delay `us  1 p 2 0 ]
-"115
+"137
 } 0
 "139 D:\GITHUB\2021_ENCM369\PIC_ACTIVITY5\encm369_pic18.c
 [v _SystemSleep SystemSleep `(v  1 e 1 0 ]

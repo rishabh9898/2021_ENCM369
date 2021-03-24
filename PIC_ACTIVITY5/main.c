@@ -54,18 +54,26 @@ void main(void)
     /* Drivers */
        
     /* Applications */
-    UserAppRun();
-   
-     
-    /* System sleep */
-    HEARTBEAT_OFF();
-    SystemSleep();
+#if 0 /*Temporary to make a smoother Sawtooth*/
     TimeXus(2);
     while((PIR3 & 0x80)!=0x80)
     {
         
     }
+     DAC1DATL+=4;
+#endif
+#if 1 /*Actual Assignment stuff */
+    UserAppRun();     
+    /* System sleep */
+    HEARTBEAT_OFF();
+    SystemSleep();
+    TimeXus(11);
+    while((PIR3 & 0x80)!=0x80)
+    {
+        
+    }
     HEARTBEAT_ON();
+#endif
     
   } /* end while(1) main super loop */
   
