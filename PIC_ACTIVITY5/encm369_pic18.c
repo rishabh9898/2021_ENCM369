@@ -88,13 +88,16 @@ Promises:
 */
 void GpioSetup(void)
 {
-    PORTA=0x80;
+    //PORTA=0x80;
     TRISA=0x00;
     ANSELA=0x00;
     
-    PORTB= 0x00;
-    ANSELB= 0x00;
-    TRISB= 0x30;
+    //PORTB= 0x00;
+    //ANSELB= 0x00;
+    //TRISB= 0x30;
+    /* set up DAC* Vdd and Vss ON RA2 Out*/
+    DAC1CON= 0xA0;//b'1010 0001
+    
   
 } /* end GpioSetup() */
 

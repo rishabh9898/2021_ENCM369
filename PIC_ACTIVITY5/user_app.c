@@ -79,6 +79,8 @@ void UserAppInitialize(void)
     LATA=0x80;
     T0CON0 = 0x90;
     T0CON1 = 0x54;
+    /* making sure to Run Dac from 0V*/
+    DAC1DATL= 0;
 
 } /* end UserAppInitialize() */
 
@@ -96,31 +98,9 @@ Promises:
 
 */
 void UserAppRun(void)
-{
-    
-    static u32 u16Count=0;
-    static u8 Toggle=0;
-    u16Count+=1;
-    u8 au8Pattern[]={0x01,0x02,0x04,0x10,0x20};
-    static u8 n=0;
-    if(u16Count==500 && Toggle==0){
-        if(n<5){
-                u16Count=0;
-                LATA=au8Pattern[n]|0x80; 
-                Toggle=1;
-                n+=1;
-        } 
-        else{
-            n=0;
-            u16Count=0;
-            LATA=au8Pattern[n]|0x80;
-            Toggle=1;
-        }
-    }
-    else{
-        Toggle=0;
-    }
-    
+{ 
+   DAC1DATL++;  /*One step in analog , automatically does 20mv step */
+   
 } /* end UserAppRun */
 
 void TimeXus(u16 u16Time_delay)

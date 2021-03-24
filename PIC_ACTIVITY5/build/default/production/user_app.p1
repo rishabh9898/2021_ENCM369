@@ -2634,133 +2634,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _UserAppRun ]
 [f ]
-"101
-[; ;user_app.c: 101:     static u32 u16Count=0;
-[v F15923 `ul ~T0 @X0 1 s u16Count ]
-[i F15923
--> -> -> 0 `i `l `ul
-]
 "102
-[; ;user_app.c: 102:     static u8 Toggle=0;
-[v F15924 `uc ~T0 @X0 1 s Toggle ]
-[i F15924
--> -> 0 `i `uc
-]
-"103
-[; ;user_app.c: 103:     u16Count+=1;
-[e =+ F15923 -> -> -> 1 `i `l `ul ]
-[v F15925 `uc ~T0 @X0 -> 5 `i s ]
-[i F15925
-:U ..
-"104
-[; ;user_app.c: 104:     u8 au8Pattern[]={0x01,0x02,0x04,0x10,0x20};
--> -> 1 `i `uc
--> -> 2 `i `uc
--> -> 4 `i `uc
--> -> 16 `i `uc
--> -> 32 `i `uc
-..
-]
-[v _au8Pattern `uc ~T0 @X0 -> 5 `i a ]
-[e = _au8Pattern F15925 ]
-"105
-[; ;user_app.c: 105:     static u8 n=0;
-[v F15927 `uc ~T0 @X0 1 s n ]
-[i F15927
--> -> 0 `i `uc
-]
-"106
-[; ;user_app.c: 106:     if(u16Count==500 && Toggle==0){
-[e $ ! && == F15923 -> -> -> 500 `i `l `ul == -> F15924 `i -> 0 `i 2274  ]
-{
-"107
-[; ;user_app.c: 107:         if(n<5){
-[e $ ! < -> F15927 `i -> 5 `i 2275  ]
-{
-"108
-[; ;user_app.c: 108:                 u16Count=0;
-[e = F15923 -> -> -> 0 `i `l `ul ]
-"109
-[; ;user_app.c: 109:                 LATA=au8Pattern[n]|0x80;
-[e = _LATA -> | -> *U + &U _au8Pattern * -> F15927 `ux -> -> # *U &U _au8Pattern `ui `ux `i -> 128 `i `uc ]
-"110
-[; ;user_app.c: 110:                 Toggle=1;
-[e = F15924 -> -> 1 `i `uc ]
-"111
-[; ;user_app.c: 111:                 n+=1;
-[e =+ F15927 -> -> 1 `i `uc ]
-"112
-[; ;user_app.c: 112:         }
-}
-[e $U 2276  ]
-"113
-[; ;user_app.c: 113:         else{
-[e :U 2275 ]
-{
-"114
-[; ;user_app.c: 114:             n=0;
-[e = F15927 -> -> 0 `i `uc ]
-"115
-[; ;user_app.c: 115:             u16Count=0;
-[e = F15923 -> -> -> 0 `i `l `ul ]
-"116
-[; ;user_app.c: 116:             LATA=au8Pattern[n]|0x80;
-[e = _LATA -> | -> *U + &U _au8Pattern * -> F15927 `ux -> -> # *U &U _au8Pattern `ui `ux `i -> 128 `i `uc ]
-"117
-[; ;user_app.c: 117:             Toggle=1;
-[e = F15924 -> -> 1 `i `uc ]
-"118
-[; ;user_app.c: 118:         }
-}
-[e :U 2276 ]
-"119
-[; ;user_app.c: 119:     }
-}
-[e $U 2277  ]
-"120
-[; ;user_app.c: 120:     else{
-[e :U 2274 ]
-{
-"121
-[; ;user_app.c: 121:         Toggle=0;
-[e = F15924 -> -> 0 `i `uc ]
-"122
-[; ;user_app.c: 122:     }
-}
-[e :U 2277 ]
-"124
-[; ;user_app.c: 124: }
+[; ;user_app.c: 102: }
 [e :UE 2273 ]
 }
-"126
-[; ;user_app.c: 126: void TimeXus(u16 u16Time_delay)
+"104
+[; ;user_app.c: 104: void TimeXus(u16 u16Time_delay)
 [v _TimeXus `(v ~T0 @X0 1 ef1`us ]
-"127
-[; ;user_app.c: 127: {
+"105
+[; ;user_app.c: 105: {
 {
 [e :U _TimeXus ]
-"126
-[; ;user_app.c: 126: void TimeXus(u16 u16Time_delay)
+"104
+[; ;user_app.c: 104: void TimeXus(u16 u16Time_delay)
 [v _u16Time_delay `us ~T0 @X0 1 r1 ]
-"127
-[; ;user_app.c: 127: {
+"105
+[; ;user_app.c: 105: {
 [f ]
-"128
-[; ;user_app.c: 128:     T0CON0 &= 0x7F;
+"106
+[; ;user_app.c: 106:     T0CON0 &= 0x7F;
 [e =& _T0CON0 -> -> 127 `i `Vuc ]
-"131
-[; ;user_app.c: 131:     TMR0H = (u8)((0xFFFF - u16Time_delay) >> 8);
+"109
+[; ;user_app.c: 109:     TMR0H = (u8)((0xFFFF - u16Time_delay) >> 8);
 [e = _TMR0H -> >> - -> 65535 `ui -> _u16Time_delay `ui -> 8 `i `uc ]
-"132
-[; ;user_app.c: 132:     TMR0L = (u8)((0xFFFF - u16Time_delay) & 0x00FF);
+"110
+[; ;user_app.c: 110:     TMR0L = (u8)((0xFFFF - u16Time_delay) & 0x00FF);
 [e = _TMR0L -> & - -> 65535 `ui -> _u16Time_delay `ui -> -> 255 `i `ui `uc ]
-"135
-[; ;user_app.c: 135:     PIR3 &= 0x7F;
+"113
+[; ;user_app.c: 113:     PIR3 &= 0x7F;
 [e =& _PIR3 -> -> 127 `i `Vuc ]
-"136
-[; ;user_app.c: 136:     T0CON0 |= 0x80;
+"114
+[; ;user_app.c: 114:     T0CON0 |= 0x80;
 [e =| _T0CON0 -> -> 128 `i `Vuc ]
-"137
-[; ;user_app.c: 137: }
-[e :UE 2278 ]
+"115
+[; ;user_app.c: 115: }
+[e :UE 2274 ]
 }

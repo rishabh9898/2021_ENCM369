@@ -38,7 +38,7 @@
         <targetDevice>PIC18F27Q43</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pk4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC8</languageToolchain>
         <languageToolchainVersion>2.31</languageToolchainVersion>
         <platform>3</platform>
@@ -203,8 +203,6 @@
         <property key="memories.programmemory.ranges" value="0-1ffff"/>
         <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="D:/GITHUB/2021_ENCM369/debug/default/PIC_Activity3_ptg"/>
         <property key="programmerToGoImageName" value="PIC_Activity3_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>

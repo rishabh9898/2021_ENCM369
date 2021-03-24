@@ -27355,23 +27355,26 @@ void ClockSetup(void)
 # 89 "encm369_pic18.c"
 void GpioSetup(void)
 {
-    PORTA=0x80;
+
     TRISA=0x00;
     ANSELA=0x00;
 
-    PORTB= 0x00;
-    ANSELB= 0x00;
-    TRISB= 0x30;
+
+
+
+
+    DAC1CON= 0xA0;
+
 
 }
-# 114 "encm369_pic18.c"
+# 117 "encm369_pic18.c"
 void SysTickSetup(void)
 {
   G_u32SystemTime1ms = 0;
   G_u32SystemTime1s = 0;
 
 }
-# 136 "encm369_pic18.c"
+# 139 "encm369_pic18.c"
 void SystemSleep(void)
 {
 
