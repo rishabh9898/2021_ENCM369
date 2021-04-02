@@ -217,7 +217,7 @@ void UserAppInitialize(void)
     T1CLK  = 0x01;  
     T1CON  = 0x31;  // b'00110001'
     
-    // Test call to set frequency
+    InterruptTimerXus(16,true);// Test call to set frequency
  
     
 } /* end UserAppInitialize() */
@@ -237,6 +237,18 @@ Promises:
 */
 void UserAppRun(void)
 {
+    static u16 Notes[]={C4, C4, G4, G4, A4, A4, G4, F4,
+    F4, E4, E4, D4, D4, C4};
+    static u32 NoteDuration[]={N1,N2,N4,N8,N6,RT,ST,HT};
+    
+    static u32 i=0;
+    DAC1DATL=Notes[i]*N4; //PLAYS THE HALFNOTE TONE 
+    i++;
+    if(i>13){
+        i=0;
+        DAC1DATL=NN;  // STOPS THE NOTE
+        DAC1DATL=RT;  // DELAYS TIME FOR REPETITION
+    }
 
   
 } /* end UserAppRun() */

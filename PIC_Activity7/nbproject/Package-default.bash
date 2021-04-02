@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/2021_ENCM369.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=2021_ENCM369.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=2021encm369/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/PIC_Activity7.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=PIC_Activity7.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=picactivity7/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/2021encm369/bin
+makeDirectory ${TMPDIR}/picactivity7/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/2021encm369.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/picactivity7.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/2021encm369.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/picactivity7.tar *
 checkReturnCode
 
 # Cleanup
