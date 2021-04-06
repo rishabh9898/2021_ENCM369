@@ -38,6 +38,12 @@ Definitions for musical notes
 #define NOTE_F4                   (u16)45  // f = 349
 #define NOTE_G4                   (u16)40  // f = 392
 #define NOTE_A4                   (u16)36  // f = 440
+#define NOTE_D                    (u16)50
+#define NOTE_G                    (u16)38
+#define NOTE_A                    (u16)34
+#define NOTE_B                    (u16)32
+#define NOTE_F                    (u16)42
+
 #define NOTE_NONE                 (u16)0
 
 /* Musical note definitions - short hand */
@@ -47,5 +53,8 @@ Definitions for musical notes
 #define F4                   (u16)NOTE_F4
 #define G4                   (u16)NOTE_G4
 #define A4                   (u16)NOTE_A4
+#define A                    (u16)NOTE_A
+#define B4                   (u16)NOTE_B
+#define F                    (u16)NOTE_F
 
 #define NN                   (u16)NOTE_NONE

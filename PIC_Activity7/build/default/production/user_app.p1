@@ -93,9 +93,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23007
 [; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 23007: extern volatile unsigned char T1CON __attribute__((address(0x31E)));
 [v _T1CON `Vuc ~T0 @X0 0 e@798 ]
-"3158
-[; ;C:/Program Files/Microchip/MPLABX/v5_45/packs/Microchip/PIC18F-Q_DFP/1.8.154/xc8\pic\include\proc\pic18f27q43.h: 3158: extern volatile unsigned char DAC1DATL __attribute__((address(0x07D)));
-[v _DAC1DATL `Vuc ~T0 @X0 0 e@125 ]
 "30 ./configuration.h
 [p x FEXTOSC  =  OFF     ]
 "31
@@ -3050,71 +3047,166 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _UserAppRun ]
 [f ]
 "240
-[; ;user_app.c: 240:     static u16 Notes[]={(u16)(u16)60, (u16)(u16)60, (u16)(u16)40, (u16)(u16)40, (u16)(u16)36, (u16)(u16)36, (u16)(u16)40, (u16)(u16)45,
-[v F15933 `us ~T0 @X0 -> 14 `i s Notes ]
+[; ;user_app.c: 240:     static u8 u8Index = 0;
+[v F15933 `uc ~T0 @X0 1 s u8Index ]
 [i F15933
-:U ..
--> -> 60 `i `us
--> -> 60 `i `us
--> -> 40 `i `us
--> -> 40 `i `us
--> -> 36 `i `us
--> -> 36 `i `us
--> -> 40 `i `us
--> -> 45 `i `us
--> -> 45 `i `us
--> -> 47 `i `us
--> -> 47 `i `us
--> -> 53 `i `us
--> -> 53 `i `us
--> -> 60 `i `us
-..
+-> -> 0 `i `uc
+]
+"241
+[; ;user_app.c: 241:     static u16 u32Count=0;
+[v F15934 `us ~T0 @X0 1 s u32Count ]
+[i F15934
+-> -> 0 `i `us
 ]
 "242
-[; ;user_app.c: 242:     static u32 NoteDuration[]={(u16)((u16)2048),(u16)((u16)2048 / 2),(u16)((u16)2048 / 4),(u16)((u16)2048 / 8),(u16)((u16)2048 / 16),(u16)50,(u16)75,(u16)0};
-[v F15934 `ul ~T0 @X0 -> 8 `i s NoteDuration ]
-[i F15934
+[; ;user_app.c: 242:     u8 Length=42;
+[v _Length `uc ~T0 @X0 1 a ]
+[e = _Length -> -> 42 `i `uc ]
+"246
+[; ;user_app.c: 246:     static u16 u16Notes[] = {(u16)(u16)60,(u16)(u16)0,(u16)(u16)60,(u16)(u16)0,(u16)(u16)40,(u16)(u16)0,(u16)(u16)40,(u16)(u16)0,(u16)(u16)36,(u16)(u16)0,(u16)(u16)36,
+[v F15936 `us ~T0 @X0 -> 42 `i s u16Notes ]
+[i F15936
 :U ..
--> -> -> 2048 `i `us `ul
--> -> / -> -> -> 2048 `i `us `ui -> -> 2 `i `ui `us `ul
--> -> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us `ul
--> -> / -> -> -> 2048 `i `us `ui -> -> 8 `i `ui `us `ul
--> -> / -> -> -> 2048 `i `us `ui -> -> 16 `i `ui `us `ul
--> -> -> 50 `i `us `ul
--> -> -> 75 `i `us `ul
--> -> -> 0 `i `us `ul
+-> -> 60 `i `us
+-> -> 0 `i `us
+-> -> 60 `i `us
+-> -> 0 `i `us
+-> -> 40 `i `us
+-> -> 0 `i `us
+-> -> 40 `i `us
+-> -> 0 `i `us
+-> -> 36 `i `us
+-> -> 0 `i `us
+-> -> 36 `i `us
+-> -> 0 `i `us
+-> -> 40 `i `us
+-> -> 0 `i `us
+-> -> 45 `i `us
+-> -> 0 `i `us
+-> -> 45 `i `us
+-> -> 0 `i `us
+-> -> 47 `i `us
+-> -> 0 `i `us
+-> -> 47 `i `us
+-> -> 0 `i `us
+-> -> 53 `i `us
+-> -> 0 `i `us
+-> -> 53 `i `us
+-> -> 0 `i `us
+-> -> 60 `i `us
+-> -> 0 `i `us
+-> -> 40 `i `us
+-> -> 0 `i `us
+-> -> 40 `i `us
+-> -> 0 `i `us
+-> -> 45 `i `us
+-> -> 0 `i `us
+-> -> 45 `i `us
+-> -> 0 `i `us
+-> -> 47 `i `us
+-> -> 0 `i `us
+-> -> 47 `i `us
+-> -> 0 `i `us
+-> -> 53 `i `us
+-> -> 0 `i `us
 ..
 ]
-"244
-[; ;user_app.c: 244:     static u32 i=0;
-[v F15935 `ul ~T0 @X0 1 s i ]
-[i F15935
--> -> -> 0 `i `l `ul
-]
-"245
-[; ;user_app.c: 245:     DAC1DATL=Notes[i]^(u16)((u16)2048 / 4);
-[e = _DAC1DATL -> ^ -> *U + &U F15933 * -> F15935 `ux -> -> # *U &U F15933 `ui `ux `ui -> -> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us `ui `uc ]
-"246
-[; ;user_app.c: 246:     i++;
-[e ++ F15935 -> -> -> 1 `i `l `ul ]
-"247
-[; ;user_app.c: 247:     if(i>13){
-[e $ ! > F15935 -> -> -> 13 `i `l `ul 2278  ]
-{
-"248
-[; ;user_app.c: 248:         i=0;
-[e = F15935 -> -> -> 0 `i `l `ul ]
-"249
-[; ;user_app.c: 249:         DAC1DATL=(u16)(u16)0;
-[e = _DAC1DATL -> -> -> 0 `i `us `uc ]
-"250
-[; ;user_app.c: 250:         DAC1DATL=(u16)50;
-[e = _DAC1DATL -> -> -> 50 `i `us `uc ]
 "251
-[; ;user_app.c: 251:     }
+[; ;user_app.c: 251:     static u16 u16NOTEDurations[] = {(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),(u16)50,(u16)((u16)2048 / 4),
+[v F15937 `us ~T0 @X0 -> 38 `i s u16NOTEDurations ]
+[i F15937
+:U ..
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 2 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+-> / -> -> -> 2048 `i `us `ui -> -> 4 `i `ui `us
+-> -> 50 `i `us
+..
+]
+"256
+[; ;user_app.c: 256:     while(1)
+[e :U 2279 ]
+"257
+[; ;user_app.c: 257:     {
+{
+"258
+[; ;user_app.c: 258:         if(u32Count==u16NOTEDurations[u8Index])
+[e $ ! == -> F15934 `ui -> *U + &U F15937 * -> F15933 `ux -> -> # *U &U F15937 `ui `ux `ui 2281  ]
+"259
+[; ;user_app.c: 259:         {
+{
+"260
+[; ;user_app.c: 260:             u8Index++;
+[e ++ F15933 -> -> 1 `i `uc ]
+"261
+[; ;user_app.c: 261:             u32Count^=u32Count;
+[e =^ F15934 -> F15934 `us ]
+"262
+[; ;user_app.c: 262:         }
+}
+[e :U 2281 ]
+"263
+[; ;user_app.c: 263:         if(u8Index==Length)
+[e $ ! == -> F15933 `i -> _Length `i 2282  ]
+"264
+[; ;user_app.c: 264:         {
+{
+"265
+[; ;user_app.c: 265:             u8Index=0;
+[e = F15933 -> -> 0 `i `uc ]
+"266
+[; ;user_app.c: 266:         }
+}
+[e :U 2282 ]
+"267
+[; ;user_app.c: 267:          u32Count++;
+[e ++ F15934 -> -> 1 `i `us ]
+"268
+[; ;user_app.c: 268:         InterruptTimerXus(u16Notes[u8Index], 1);
+[e ( _InterruptTimerXus (2 , *U + &U F15936 * -> F15933 `ux -> -> # *U &U F15936 `ui `ux -> -> 1 `i `a ]
+"269
+[; ;user_app.c: 269:         break;
+[e $U 2280  ]
+"270
+[; ;user_app.c: 270:     }
 }
 [e :U 2278 ]
-"254
-[; ;user_app.c: 254: }
+[e $U 2279  ]
+[e :U 2280 ]
+"321
+[; ;user_app.c: 321: }
 [e :UE 2277 ]
 }

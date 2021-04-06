@@ -237,20 +237,87 @@ Promises:
 */
 void UserAppRun(void)
 {
-    static u16 Notes[]={C4, C4, G4, G4, A4, A4, G4, F4,
-    F4, E4, E4, D4, D4, C4};
-    static u32 NoteDuration[]={N1,N2,N4,N8,N6,RT,ST,HT};
+    static u8 u8Index = 0;
+    static u16 u32Count=0;
+    u8 Length=42;
+#if 1  
     
-    static u32 i=0;
-    DAC1DATL=Notes[i]*N4; //PLAYS THE HALFNOTE TONE 
-    i++;
-    if(i>13){
-        i=0;
-        DAC1DATL=NN;  // STOPS THE NOTE
-        DAC1DATL=RT;  // DELAYS TIME FOR REPETITION
+    
+    static u16 u16Notes[] = {C4,NN,C4,NN,G4,NN,G4,NN,A4,NN,A4,
+                             NN,G4,NN,F4,NN,F4,NN,E4,NN,E4,NN,
+                             D4,NN,D4,NN,C4,NN,G4,NN,G4,NN,
+                             F4,NN,F4,NN,E4,NN,E4,NN,D4,NN};
+    
+    static u16 u16NOTEDurations[] = {N4,RT,N4,RT,N4,RT,N4,RT,N4,
+                                     RT,N4,RT,N2,RT,N4,RT,N4,RT,N4,
+                                     RT,N4,RT,N4,RT,N4,RT,N4,RT,
+                                     N4,RT,N4,RT,N4,RT,N4,RT,N4,RT};
+    
+    while(1)
+    {
+        if(u32Count==u16NOTEDurations[u8Index])
+        {
+            u8Index++;
+            u32Count^=u32Count;
+        }
+        if(u8Index==Length)
+        {
+            u8Index=0;
+        }
+         u32Count++;
+        InterruptTimerXus(u16Notes[u8Index], true);
+        break;
     }
-
-  
+    
+#endif
+    
+#if 0
+    static u16 u16Notes[] = {E4,NN,G4,NN,A4,NN,A4,NN,
+                             E4,NN,G4,NN,B4,NN,A4,NN,
+                             E4,NN,G4,NN,A4,NN,A4,NN,
+                             A4,NN,E4,NN,E4,NN,B4,NN,
+                             A4,NN,G4,NN,A4,NN,G4,NN,
+                             B4,NN,C4,NN,C4,NN,G4,NN,
+                             B4,NN,C4,NN,C4,NN,G4,NN,
+                             B4,NN ,C4,NN,C4,NN,D4,NN,
+                             D4,NN,D4,NN,D4,NN,E4,NN,
+                             E4,NN ,F,NN,F,NN,G4,NN,A4,NN,
+                             G4,NN, A4,NN ,G4,NN ,A4,NN ,G4,NN}; //fefeca a#a
+    static u16 u16NOTEDurations[] = {N4,RT,N4,RT,N4,RT,N4,RT,N4,
+                                     RT,N4,RT,N2,RT,RT,N4,RT,N4,
+                                     N4,RT,N4,RT,N4,RT,N4,RT,N4,
+                                     RT,N4,RT,N2,RT,RT,N4,RT,N4,
+                                     N4,RT,N4,RT,N4,RT,N4,RT,N4,
+                                     RT,N4,RT,N2,RT,RT,N4,RT,N4,
+                                     N4,RT,N4,RT,N4,RT,N4,RT,N4,
+                                     RT,N4,RT,N2,RT,RT,N4,RT,N4,
+                                     N4,RT,N4,RT,N4,RT,N4,RT,N4,
+                                     RT,N4,RT,N2,RT,RT,N4,RT,N4,
+                                     N4,RT,N4,RT,N4,RT,N4,RT,N4,
+                                     RT,N4,RT,N2,RT,RT,N4,RT,N4,
+                                     N4,RT,N4,RT,N4,RT,N4,RT,N4,
+                                     RT,N4,RT,N2,RT,RT,N4,RT,N4,
+                                     N4,RT,N4,RT,N4,RT,N4,RT,N4,
+                                     RT,N4,RT,N4,RT,RT,N4,RT,N4}; //N4,RT,N4,RT,N4,
+    
+    while(1)
+    {
+        if(u32Count==u16NOTEDurations[u8Index])
+        {
+            u8Index++;
+            u32Count^=u32Count;
+        }
+        if(u8Index==Length)
+        {
+            u8Index=0;
+        }
+         u32Count++;
+        InterruptTimerXus(u16Notes[u8Index], true);
+        break;
+    }
+    
+#endif 
+    
 } /* end UserAppRun() */
 
 
